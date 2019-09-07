@@ -1,0 +1,89 @@
+{
+  "name": "jumbo-code-project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.4.0",
+    "@material-ui/icons": "^4.0.1",
+    "@material-ui/styles": "^4.3.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "hookrouter": "^1.2.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-aspect-ratio": "^1.0.40",
+    "react-dom": "^16.9.0",
+    "react-paginate": "^6.3.0",
+    "react-scripts": "3.1.1",
+    "react-test-renderer": "^16.9.0",
+    "router": "^1.3.3",
+    "test-utils": "^1.1.1"
+  },
+  "proxy": "https://api.themoviedb.org/3/",
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "set CI=true && react-scripts test",
+    "test:watch": "react-scripts test",
+    "test:coverage": "set CI=true && react-scripts test --coverage",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-utils": "^1.4.1",
+    "prettier": "^1.18.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^config$": "<rootDir>/src/setupTests.js"
+    },
+    "collectCoverageFrom": [
+      "**/__tests__**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/serviceWorker.js",
+      "!**/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  }
+}

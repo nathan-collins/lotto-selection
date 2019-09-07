@@ -1,0 +1,33 @@
+div {
+  flex-basis: calc(10% - 8px);
+  text-align: center;
+}
+
+.square {
+  border: 1px solid #000000;
+  padding: 3px;
+}
+
+.circle {
+  border: 1px solid #000000;
+  border-radius: 50%;
+  min-width: 20px;
+  padding: 6px 4px;
+  margin: 0 6px 0 0;
+}
+
+.circle:empty {
+  height: 20px;
+  width: 20px;
+}
+
+.special {
+  background: grey;
+}
+
+.selected {
+  background-image: url(../assets/images/orange-cross.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
