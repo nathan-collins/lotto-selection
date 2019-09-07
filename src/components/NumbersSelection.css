@@ -1,0 +1,11 @@
+.incremental {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.title {
+  background: darkblue;
+  color: white;
+  text-transform: uppercase;
+}
