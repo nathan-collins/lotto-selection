@@ -40,6 +40,7 @@ const NumbersList = ({ numbers, specialNumbers, specialCharacterLabel }) => {
 
     return allNumbers.map((number, index) => {
       if (!number) {
+        // Tests should tidy this up a bit
         if (secondaryNumbers.includes(index + 1)) {
           specialCharacter = true;
         }
