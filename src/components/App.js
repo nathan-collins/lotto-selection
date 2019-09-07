@@ -43,7 +43,6 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           const results = data.DrawResults[0];
-          console.log(results);
           setNumbers(results.PrimaryNumbers);
           setSpecialNumbers(results.SecondaryNumbers);
         });
