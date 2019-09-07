@@ -31,9 +31,22 @@ const NumbersList = ({ numbers, specialNumbers, specialCharacterLabel }) => {
 
     let specialCharacter = false;
 
+    // Need to tidy this up a bit
+    const secondaryNumbers = TabcorpHelper.buildArrayFromStartingNumber(
+      allNumbers.length - specialNumbers.length + 1,
+      allNumbers.length,
+      1
+    );
+
     return allNumbers.map((number, index) => {
-      if (specialNumbers.includes(number)) {
-        specialCharacter = true;
+      if (!number) {
+        if (secondaryNumbers.includes(index + 1)) {
+          specialCharacter = true;
+        }
+      } else {
+        if (specialNumbers.includes(number)) {
+          specialCharacter = true;
+        }
       }
 
       return (
