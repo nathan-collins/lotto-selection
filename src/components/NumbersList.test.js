@@ -7,17 +7,29 @@ import NumbersList from './NumbersList';
 configure({ adapter: new Adapter() });
 
 describe('<NumbersList />', () => {
-  let wrapper;
+  let primaryNumbers;
+  let secondaryNumbers;
 
   beforeEach(() => {
-    wrapper = shallow(<NumbersList />);
+    primaryNumbers = [12, 16, 21, 40];
+    secondaryNumbers = [12];
   });
 
   it('renders the component on shallow', () => {
-    shallow(<NumbersList />);
+    shallow(
+      <NumbersList
+        primaryNumbers={primaryNumbers}
+        secondaryNumbers={secondaryNumbers}
+      />
+    );
   });
 
   it('renders the component on mount', () => {
-    mount(<NumbersList />);
+    mount(
+      <NumbersList
+        primaryNumbers={primaryNumbers}
+        secondaryNumbers={secondaryNumbers}
+      />
+    );
   });
 });

@@ -27,8 +27,4 @@ describe('<App />', () => {
   it('renders the component on mount', () => {
     mount(<App />);
   });
-
-  it('displays the number selections', () => {
-    expect(wrapper.find('#numberSelection').exists()).toBe(true);
-  });
 });

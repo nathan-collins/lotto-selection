@@ -81,10 +81,12 @@ function App() {
           secondaryCharacterLabel={currentGameLabel}
         />
         <NumbersSelection
+          name="primary"
           totalNumbers={totalPrimaryNumbers}
           numbers={primaryNumbers}
         />
         <NumbersSelection
+          name="secondary"
           totalNumbers={totalSecondaryNumbers}
           title={titleText}
           numbers={secondaryNumbers}
