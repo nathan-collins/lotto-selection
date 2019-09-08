@@ -16,7 +16,6 @@ const NumberContainer = ({
   exists,
   specialCharacterLabel,
 }) => {
-  console.log(number);
   return (
     <div
       className={
