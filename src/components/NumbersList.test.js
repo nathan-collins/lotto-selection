@@ -40,7 +40,7 @@ describe('<NumbersList />', () => {
         secondaryNumbers={secondaryNumbers}
       />
     );
-    console.log(wrapper.debug());
+
     expect(wrapper.find('NumberContainer')).toHaveLength(5);
   });
 });
