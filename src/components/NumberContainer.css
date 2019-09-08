@@ -29,7 +29,7 @@ div {
   background: #ffffff;
 }
 
-.special {
+.secondary {
   border: 1px solid #a8a4a4;
   background: #889bab;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -37,7 +37,7 @@ div {
   font-weight: bold;
 }
 
-.special:empty {
+.secondary:empty {
   background: #ffffff;
 }
 
