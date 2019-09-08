@@ -34,6 +34,20 @@ The page should not be hosted.
 
 ---
 
+## Additional Notes
+
+Time spent on exercise and test 5 hours
+
+> Other things I would of liked to add to the test
+
+- Implementation to other games so multiple games could be displays at once.
+- Added more test to gain more confidence in the application.
+- Added sinon, chai and mocha.
+- Api testing to make sure values had not changed.
+- More in depth styling.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

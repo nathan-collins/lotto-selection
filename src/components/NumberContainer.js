@@ -20,12 +20,9 @@ const NumberContainer = ({
     <div
       className={
         type +
-        ' ' +
-        (secondaryCharacter ? 'secondary' : '') +
-        ' ' +
-        (exists ? 'selected' : '') +
-        ' ' +
-        (!number && secondaryCharacter ? 'no-background' : '')
+        (secondaryCharacter ? ' secondary' : '') +
+        (exists ? ' selected' : '') +
+        (!number && secondaryCharacter ? ' no-background' : '')
       }
     >
       {!number && secondaryCharacter ? secondaryCharacterLabel : number}

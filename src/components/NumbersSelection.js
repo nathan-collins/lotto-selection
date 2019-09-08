@@ -11,7 +11,10 @@ import TabcorpHelper from './TabcorpHelper';
  * @param {Array} numbers All values to highlight as existing
  * @return {String} <NumberContainer />
  */
-const NumbersSelection = ({ totalNumbers, title, numbers }) => {
+const NumbersSelection = ({ name, totalNumbers, title, numbers }) => {
+  /**
+   * @param {Number} totalNumbers Total amount of numbers to display in the box
+   */
   const NumberSquares = (totalNumbers) => {
     if (!totalNumbers) return;
     return TabcorpHelper.buildArrayFromNumber(totalNumbers).map(
@@ -41,7 +44,9 @@ const NumbersSelection = ({ totalNumbers, title, numbers }) => {
   return (
     <div>
       {showTitle(title)}
-      <div className="incremental">{NumberSquares(totalNumbers)}</div>
+      <div id={name} className="incremental">
+        {NumberSquares(totalNumbers)}
+      </div>
     </div>
   );
 };
