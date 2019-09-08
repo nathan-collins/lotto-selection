@@ -23,7 +23,9 @@ const NumberContainer = ({
         ' ' +
         (specialCharacter ? 'special' : '') +
         ' ' +
-        (exists ? 'selected' : '')
+        (exists ? 'selected' : '') +
+        ' ' +
+        (!number && specialCharacter ? 'no-background' : '')
       }
     >
       {!number && specialCharacter ? specialCharacterLabel : number}
