@@ -7,7 +7,7 @@ import TabcorpHelper from './TabcorpHelper';
 /**
  *
  * @param {Array} primaryNumbers All numbers to display inside results
- * @param {Array} secondaryNumbers All special numbers to display at the end of the results
+ * @param {Array} secondaryNumbers All secondary numbers to display at the end of the results
  * @return {String} <NumberContainer />
  */
 const NumbersList = ({

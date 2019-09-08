@@ -5,9 +5,9 @@ import './NumberContainer.css';
  *
  * @param {String} type Circle or square number container?
  * @param {Number} number The number to display in the container
- * @param {Boolean} secondaryCharacter Is it a special character?
+ * @param {Boolean} secondaryCharacter Is it a secondary character?
  * @param {Boolean} exists Does the number exist in the results list?
- * @param {String} secondaryCharacterLabel Special character default display
+ * @param {String} secondaryCharacterLabel Secondary character default display
  */
 const NumberContainer = ({
   type,
@@ -21,7 +21,7 @@ const NumberContainer = ({
       className={
         type +
         ' ' +
-        (secondaryCharacter ? 'special' : '') +
+        (secondaryCharacter ? 'secondary' : '') +
         ' ' +
         (exists ? 'selected' : '') +
         ' ' +
