@@ -16,6 +16,7 @@ const NumberContainer = ({
   exists,
   specialCharacterLabel,
 }) => {
+  console.log(number);
   return (
     <div
       className={
@@ -23,7 +24,9 @@ const NumberContainer = ({
         ' ' +
         (specialCharacter ? 'special' : '') +
         ' ' +
-        (exists ? 'selected' : '')
+        (exists ? 'selected' : '') +
+        ' ' +
+        (!number && specialCharacter ? 'no-background' : '')
       }
     >
       {!number && specialCharacter ? specialCharacterLabel : number}

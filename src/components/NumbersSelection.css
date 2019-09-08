@@ -1,11 +1,13 @@
 .incremental {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+  border-top: 1px solid #a8a4a4;
+  border-left: 1px solid #a8a4a4;
 }
 
 .title {
-  background: darkblue;
+  background: #889bab;
   color: white;
+  font-size: 12px;
   text-transform: uppercase;
 }

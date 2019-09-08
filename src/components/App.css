@@ -8,8 +8,12 @@
   width: 300px;
 }
 
+#increment {
+  padding: 12px 30px;
+}
+
 #icons {
-  padding: 10px 30px;
+  padding: 12px 30px;
 }
 
 @keyframes App-logo-spin {
