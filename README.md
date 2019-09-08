@@ -17,7 +17,7 @@ Or retrieved from data API:
 > POST https://data.api.thelott.com/sales/vmax/web/data/lotto/latestresults
 
 ```javascript
-{&quot;CompanyId&quot;:&quot;GoldenCasket&quot;,&quot;MaxDrawCountPerProduct&quot;:1,&quot;OptionalProductFilter&quot;:[&quot;Powerball&quot;]}
+{"CompanyId": "GoldenCasket", "MaxDrawCountPerProduct":1, "OptionalProductFilter": ["Powerball"]}
 ```
 
 ## Constraints and recommendations:
