@@ -5,30 +5,30 @@ import './NumberContainer.css';
  *
  * @param {String} type Circle or square number container?
  * @param {Number} number The number to display in the container
- * @param {Boolean} specialCharacter Is it a special character?
+ * @param {Boolean} secondaryCharacter Is it a special character?
  * @param {Boolean} exists Does the number exist in the results list?
- * @param {String} specialCharacterLabel Special character default display
+ * @param {String} secondaryCharacterLabel Special character default display
  */
 const NumberContainer = ({
   type,
   number,
-  specialCharacter,
+  secondaryCharacter,
   exists,
-  specialCharacterLabel,
+  secondaryCharacterLabel,
 }) => {
   return (
     <div
       className={
         type +
         ' ' +
-        (specialCharacter ? 'special' : '') +
+        (secondaryCharacter ? 'special' : '') +
         ' ' +
         (exists ? 'selected' : '') +
         ' ' +
-        (!number && specialCharacter ? 'no-background' : '')
+        (!number && secondaryCharacter ? 'no-background' : '')
       }
     >
-      {!number && specialCharacter ? specialCharacterLabel : number}
+      {!number && secondaryCharacter ? secondaryCharacterLabel : number}
     </div>
   );
 };

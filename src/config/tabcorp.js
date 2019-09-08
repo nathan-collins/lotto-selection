@@ -8,6 +8,10 @@ export const tabcorpConfig = {
     powerball: {
       primaryNumberTotals: 7,
       secondaryNumberTotals: 1,
+      totalPrimaryNumbers: 35,
+      totalSecondaryNumbers: 35,
+      secondaryCharacterLabel: 'PB',
+      titleText: 'Select your Powerball',
     },
   },
 };

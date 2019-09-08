@@ -6,34 +6,40 @@ import TabcorpHelper from './TabcorpHelper';
 
 /**
  *
- * @param {Array} numbers All numbers to display inside results
- * @param {Array} specialNumbers All special numbers to display at the end of the results
+ * @param {Array} primaryNumbers All numbers to display inside results
+ * @param {Array} secondaryNumbers All special numbers to display at the end of the results
  * @return {String} <NumberContainer />
  */
-const NumbersList = ({ numbers, specialNumbers, specialCharacterLabel }) => {
-  const [specialCharacters, setSpecialCharacters] = useState([]);
+const NumbersList = ({
+  primaryNumbers,
+  secondaryNumbers,
+  secondaryCharacterLabel,
+}) => {
+  const [secondaryCharacters, setSecondaryCharacters] = useState([]);
 
   /**
    */
   useEffect(() => {
-    setSpecialCharacters(
-      numbers.slice(Math.max(numbers.length - specialCharacters.length, 1))
+    setSecondaryCharacters(
+      primaryNumbers.slice(
+        Math.max(primaryNumbers.length - secondaryCharacters.length, 1)
+      )
     );
-  }, [numbers, specialCharacters.length]);
+  }, [primaryNumbers, secondaryCharacters.length]);
 
   /**
    * Process all values and output results
    * @return {String} <NumberContainer />
    */
   const NumberCircles = () => {
-    if (numbers.length === 0) return;
-    const allNumbers = [...numbers, ...specialNumbers];
+    if (primaryNumbers.length === 0) return;
+    const allNumbers = [...primaryNumbers, ...secondaryNumbers];
 
-    let specialCharacter = false;
+    let secondaryCharacter = false;
 
     // Need to tidy this up a bit
-    const secondaryNumbers = TabcorpHelper.buildArrayFromStartingNumber(
-      allNumbers.length - specialNumbers.length + 1,
+    const secondaryNumbersPositions = TabcorpHelper.buildArrayFromStartingNumber(
+      allNumbers.length - secondaryNumbers.length + 1,
       allNumbers.length,
       1
     );
@@ -41,12 +47,12 @@ const NumbersList = ({ numbers, specialNumbers, specialCharacterLabel }) => {
     return allNumbers.map((number, index) => {
       if (!number) {
         // Tests should tidy this up a bit
-        if (secondaryNumbers.includes(index + 1)) {
-          specialCharacter = true;
+        if (secondaryNumbersPositions.includes(index + 1)) {
+          secondaryCharacter = true;
         }
       } else {
-        if (specialNumbers.includes(number)) {
-          specialCharacter = true;
+        if (secondaryNumbers.includes(number)) {
+          secondaryCharacter = true;
         }
       }
 
@@ -55,14 +61,14 @@ const NumbersList = ({ numbers, specialNumbers, specialCharacterLabel }) => {
           key={index}
           type="circle"
           number={number}
-          specialCharacter={specialCharacter}
-          specialCharacterLabel={specialCharacterLabel}
+          secondaryCharacter={secondaryCharacter}
+          secondaryCharacterLabel={secondaryCharacterLabel}
         />
       );
     });
   };
 
-  return <div className="numbers">{NumberCircles(numbers)}</div>;
+  return <div className="numbers">{NumberCircles(primaryNumbers)}</div>;
 };
 
 export default NumbersList;

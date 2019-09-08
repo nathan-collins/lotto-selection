@@ -13,16 +13,23 @@ import TabcorpHelper from './TabcorpHelper';
  * @return {String} Markup
  */
 function App() {
+  const configPath = tabcorpConfig.games[tabcorpConfig.currentGame];
+
   const defaultPrimaryNumbers = TabcorpHelper.buildArrayFromNumber(
-    tabcorpConfig.games[tabcorpConfig.currentGame].primaryNumberTotals
+    configPath.primaryNumberTotals
   );
-
   const defaultSecondaryNumbers = TabcorpHelper.buildArrayFromNumber(
-    tabcorpConfig.games[tabcorpConfig.currentGame].secondaryNumberTotals
+    configPath.secondaryNumberTotals
   );
+  const currentGameLabel = configPath.secondaryCharacterLabel;
+  const totalPrimaryNumbers = configPath.totalPrimaryNumbers;
+  const totalSecondaryNumbers = configPath.totalSecondaryNumbers;
+  const titleText = configPath.titleText;
 
-  const [numbers, setNumbers] = useState(defaultPrimaryNumbers);
-  const [specialNumbers, setSpecialNumbers] = useState(defaultSecondaryNumbers);
+  const [primaryNumbers, setPrimaryNumbers] = useState(defaultPrimaryNumbers);
+  const [secondaryNumbers, setSecondaryNumbers] = useState(
+    defaultSecondaryNumbers
+  );
 
   /**
    * Retrieve result from the api
@@ -43,8 +50,8 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           const results = data.DrawResults[0];
-          setNumbers(results.PrimaryNumbers);
-          setSpecialNumbers(results.SecondaryNumbers);
+          setPrimaryNumbers(results.PrimaryNumbers);
+          setSecondaryNumbers(results.SecondaryNumbers);
         });
     } catch (error) {
       if (error.name !== 'AbortError') {
@@ -57,25 +64,30 @@ function App() {
    * Empty results to start again
    */
   const removeResults = () => {
-    setNumbers(defaultPrimaryNumbers);
-    setSpecialNumbers(defaultSecondaryNumbers);
+    setPrimaryNumbers(defaultPrimaryNumbers);
+    setSecondaryNumbers(defaultSecondaryNumbers);
   };
 
+  /**
+   * @return {String} Markup value for <App />
+   */
   return (
     <div className="app">
-      <header className="App-header"></header>
       <section id="increment">1</section>
       <section id="numbersSelection">
         <NumbersList
-          numbers={numbers}
-          specialNumbers={specialNumbers}
-          specialCharacterLabel="PB"
+          primaryNumbers={primaryNumbers}
+          secondaryNumbers={secondaryNumbers}
+          secondaryCharacterLabel={currentGameLabel}
         />
-        <NumbersSelection totalNumbers="35" numbers={numbers} />
         <NumbersSelection
-          totalNumbers="20"
-          title="Select your Powerball"
-          numbers={specialNumbers}
+          totalNumbers={totalPrimaryNumbers}
+          numbers={primaryNumbers}
+        />
+        <NumbersSelection
+          totalNumbers={totalSecondaryNumbers}
+          title={titleText}
+          numbers={secondaryNumbers}
         />
       </section>
       <section id="icons">
