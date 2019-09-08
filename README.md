@@ -1,3 +1,38 @@
+By completing this test, you acknowledge:
+
+- This test is voluntary and performed in your own time and at your own expense.
+- The test is not applicable to any current project at Tabcorp and is solely for the purpose of testing your skill
+  for the position of Software Engineer during the recruitment process.
+- Tabcorp derives no benefit from the task performed other than the assessment of your suitability for the
+  position of Software Engineer for which you have applied.
+
+Tabcorp is committed to creating an inclusive workplace where all our people feel valued for their unique qualities and have a sense of belonging. If you need assistance or adjustments to fully participate in the application process, including this test, please contact your agency.
+
+**Brief**:
+Using a frontend framework (e.g. React ideally, Vue, Angular) of your choice create a mobile-friendly web page which allows auto-filling ticket numbers based on results of last Powerball draw.
+**Details**:
+The results for last Powerball draw can be viewed on https://thelott.com/powerball/results
+Or retrieved from data API:
+
+> POST https://data.api.thelott.com/sales/vmax/web/data/lotto/latestresults
+
+```javascript
+{&quot;CompanyId&quot;:&quot;GoldenCasket&quot;,&quot;MaxDrawCountPerProduct&quot;:1,&quot;OptionalProductFilter&quot;:[&quot;Powerball&quot;]}
+```
+
+## Constraints and recommendations:
+
+The form does not need to be submitted, we’re only after the function of “click a button -&gt; make request to the API -
+&gt; fill out the form”.
+The form layout should resemble example above.
+Use a “framework-relevant” way of requesting data from API and interacting with DOM.
+JQuery should not be used.
+The code should be uploaded to a public github or gitlab account so that it can be reviewed -&gt; Please share the URL
+address for your uploaded project.
+The page should not be hosted.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
