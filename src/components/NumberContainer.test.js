@@ -7,10 +7,9 @@ import NumberContainer from './NumberContainer';
 configure({ adapter: new Adapter() });
 
 describe('<NumberContainer />', () => {
-  let wrapper;
-
+  let secondaryCharacterLabel;
   beforeEach(() => {
-    wrapper = shallow(<NumberContainer />);
+    secondaryCharacterLabel = 'PB';
   });
 
   it('renders the component on shallow', () => {

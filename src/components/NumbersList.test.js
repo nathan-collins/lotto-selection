@@ -32,4 +32,15 @@ describe('<NumbersList />', () => {
       />
     );
   });
+
+  it('has the correct number of primary numbers', () => {
+    const wrapper = shallow(
+      <NumbersList
+        primaryNumbers={primaryNumbers}
+        secondaryNumbers={secondaryNumbers}
+      />
+    );
+    console.log(wrapper.debug());
+    expect(wrapper.find('NumberContainer')).toHaveLength(5);
+  });
 });

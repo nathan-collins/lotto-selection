@@ -34,7 +34,6 @@ describe('<NumbersSelection />', () => {
     const title = 'Some title';
 
     const wrapper = shallow(<NumbersSelection name="primary" title={title} />);
-    console.log(wrapper.debug());
 
     expect(wrapper.find('.title').text()).toBe(title);
   });
@@ -43,7 +42,6 @@ describe('<NumbersSelection />', () => {
     ('Does not set the title and it is not visible',
     () => {
       const wrapper = shallow(<NumbersSelection />);
-      console.log(wrapper.debug());
 
       expect(wrapper.find('.title').exists()).toBeTruthy();
     })
