@@ -38,7 +38,7 @@ The page should not be hosted.
 
 Time spent on exercise and test 5 hours
 
-> Other things I would of liked to add to the test
+> Other things I would of liked to add to the application
 
 - Implementation to other games so multiple games could be displays at once.
 - Added more test to gain more confidence in the application.
