@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import Delete from '@material-ui/icons/DeleteOutlineRounded';
+import OfflineBolt from '@material-ui/icons/OfflineBoltRounded';
 import NumbersSelection from './NumbersSelection';
 import NumbersList from './NumbersList';
 
-import Delete from '@material-ui/icons/DeleteOutlineRounded';
-import OfflineBolt from '@material-ui/icons/OfflineBoltRounded';
 import { tabcorpConfig } from '../config/tabcorp.js';
 import TabcorpHelper from './TabcorpHelper';
 
@@ -15,38 +15,31 @@ import TabcorpHelper from './TabcorpHelper';
 function App() {
   const configPath = tabcorpConfig.games[tabcorpConfig.currentGame];
 
-  const defaultPrimaryNumbers = TabcorpHelper.buildArrayFromNumber(
-    configPath.primaryNumberTotals
-  );
+  const defaultPrimaryNumbers = TabcorpHelper.buildArrayFromNumber(configPath.primaryNumberTotals);
   const defaultSecondaryNumbers = TabcorpHelper.buildArrayFromNumber(
     configPath.secondaryNumberTotals
   );
   const currentGameLabel = configPath.secondaryCharacterLabel;
-  const totalPrimaryNumbers = configPath.totalPrimaryNumbers;
-  const totalSecondaryNumbers = configPath.totalSecondaryNumbers;
-  const titleText = configPath.titleText;
+  const { totalPrimaryNumbers } = configPath;
+  const { totalSecondaryNumbers } = configPath;
+  const { titleText } = configPath;
 
   const [primaryNumbers, setPrimaryNumbers] = useState(defaultPrimaryNumbers);
-  const [secondaryNumbers, setSecondaryNumbers] = useState(
-    defaultSecondaryNumbers
-  );
+  const [secondaryNumbers, setSecondaryNumbers] = useState(defaultSecondaryNumbers);
 
   /**
    * Retrieve result from the api
    */
   const fetchResults = async () => {
     try {
-      await fetch(
-        'https://data.api.thelott.com/sales/vmax/web/data/lotto/latestresults',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            CompanyId: tabcorpConfig.company,
-            MaxDrawCountPerProduct: 1,
-            OptionalProductFilter: [tabcorpConfig.currentGame],
-          }),
-        }
-      )
+      await fetch('https://data.api.thelott.com/sales/vmax/web/data/lotto/latestresults', {
+        method: 'POST',
+        body: JSON.stringify({
+          CompanyId: tabcorpConfig.company,
+          MaxDrawCountPerProduct: 1,
+          OptionalProductFilter: [tabcorpConfig.currentGame],
+        }),
+      })
         .then((response) => response.json())
         .then((data) => {
           const results = data.DrawResults[0];

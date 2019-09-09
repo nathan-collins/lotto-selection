@@ -7,16 +7,11 @@ import NumberContainer from './NumberContainer';
 configure({ adapter: new Adapter() });
 
 describe('<NumberContainer />', () => {
-  let secondaryCharacterLabel;
-  beforeEach(() => {
-    secondaryCharacterLabel = 'PB';
-  });
-
   it('renders the component on shallow', () => {
-    shallow(<NumberContainer />);
+    shallow(<NumberContainer type="circle" number={12} />);
   });
 
   it('renders the component on mount', () => {
-    mount(<NumberContainer />);
+    mount(<NumberContainer type="circle" number={12} />);
   });
 });

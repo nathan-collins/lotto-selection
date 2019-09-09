@@ -25,14 +25,13 @@
     "no-console": "error",
     "import/no-unresolved": "off",
     "no-eval": "error",
-    "semi": true,
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".js", ".jsx"]
       }
     ],
-    "react/prefer-stateless-function": ["enabled"],
+    "react/prefer-stateless-function": [1],
     "prettier/prettier": [
       "error",
       {
