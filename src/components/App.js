@@ -61,11 +61,6 @@ function App() {
     setSecondaryNumbers(defaultSecondaryNumbers);
   };
 
-  const largeIcon = {
-    width: 60,
-    height: 60,
-  };
-
   /**
    * @return {String} Markup value for <App />
    */
