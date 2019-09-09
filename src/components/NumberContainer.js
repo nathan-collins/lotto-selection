@@ -36,7 +36,7 @@ NumberContainer.propTypes = {
 };
 
 NumberContainer.defaultProps = {
-  number: 0,
+  number: null,
   secondaryCharacter: false,
   exists: false,
   secondaryCharacterLabel: '',

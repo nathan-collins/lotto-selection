@@ -38,8 +38,7 @@
         "trailingComma": "es5",
         "singleQuote": true,
         "printWidth": 100,
-        "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-        "semi": true
+        "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
       }
     ]
   }

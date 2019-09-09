@@ -61,6 +61,11 @@ function App() {
     setSecondaryNumbers(defaultSecondaryNumbers);
   };
 
+  const largeIcon = {
+    width: 60,
+    height: 60,
+  };
+
   /**
    * @return {String} Markup value for <App />
    */
@@ -86,8 +91,8 @@ function App() {
         />
       </section>
       <section id="icons">
-        <OfflineBolt onClick={fetchResults} />
-        <Delete onClick={removeResults} />
+        <OfflineBolt className="scale-icon offline-icon" onClick={fetchResults} />
+        <Delete className="scale-icon delete-icon" onClick={removeResults} />
       </section>
     </div>
   );
