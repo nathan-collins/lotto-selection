@@ -6,8 +6,7 @@ div {
 .square {
   border-bottom: 1px solid #a8a4a4;
   border-right: 1px solid #a8a4a4;
-  padding: 5px;
-  font-size: 14px;
+  padding: 10px;
   color: purple;
 }
 
@@ -16,11 +15,18 @@ div {
   background: #3450a7;
   color: #ffffff;
   border-radius: 50%;
-  min-width: 20px;
-  padding: 6px 4px;
+  min-width: 18px;
+  padding: 4px;
   margin: 0 6px 0 0;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.circle:first-child:empty {
+  border: 2px solid #4d65b1;
 }
 
 .circle:empty {
@@ -35,9 +41,13 @@ div {
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   font-weight: bold;
+  height: 18px;
+  width: 18px;
 }
 
 .secondary:empty {
+  height: 18px;
+  width: 18px;
   background: #ffffff;
 }
 
@@ -47,10 +57,11 @@ div {
 }
 
 .selected {
-  background-image: url(../assets/images/orange-cross.png);
+  background-image: url(../assets/images/purple-cross.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #e9e4f1;
   font-weight: bold;
+  opacity: 0.8;
 }

@@ -8,6 +8,7 @@
 .title {
   background: #889bab;
   color: white;
-  font-size: 12px;
+  padding: 3px 0;
+  font-weight: bolder;
   text-transform: uppercase;
 }
