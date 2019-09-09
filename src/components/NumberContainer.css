@@ -30,7 +30,7 @@ div {
 }
 
 .circle:empty {
-  height: 18px;
+  height: 16px;
   width: 18px;
   background: #ffffff;
 }
@@ -63,5 +63,5 @@ div {
   background-position: center;
   background-color: #e9e4f1;
   font-weight: bold;
-  opacity: 0.8;
+  opacity: 1;
 }
