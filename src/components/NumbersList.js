@@ -51,6 +51,7 @@ const NumbersList = ({ primaryNumbers, secondaryNumbers, secondaryCharacterLabel
 
       return (
         <NumberContainer
+          key={!number ? index : number}
           type="circle"
           number={number}
           secondaryCharacter={secondaryCharacter}
