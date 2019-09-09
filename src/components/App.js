@@ -86,8 +86,8 @@ function App() {
         />
       </section>
       <section id="icons">
-        <OfflineBolt onClick={fetchResults} />
-        <Delete onClick={removeResults} />
+        <OfflineBolt className="scale-icon offline-icon" onClick={fetchResults} />
+        <Delete className="scale-icon delete-icon" onClick={removeResults} />
       </section>
     </div>
   );

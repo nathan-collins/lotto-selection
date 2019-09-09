@@ -8,8 +8,22 @@
   width: 300px;
 }
 
+.offline-icon {
+  fill: #6c4498 !important;
+}
+
+.delete-icon {
+  fill: #767676 !important;
+}
+
+.scale-icon {
+  padding: 3px;
+  transform: scale(1.5);
+}
+
 #increment {
   padding: 12px 30px;
+  font-size: 1rem;
 }
 
 #icons {

@@ -52,7 +52,7 @@ const NumbersList = ({ primaryNumbers, secondaryNumbers, secondaryCharacterLabel
       return (
         <NumberContainer
           type="circle"
-          number={index}
+          number={number}
           secondaryCharacter={secondaryCharacter}
           secondaryCharacterLabel={secondaryCharacterLabel}
         />
