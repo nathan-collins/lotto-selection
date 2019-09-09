@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './NumbersList.css';
 
+import PropTypes from 'prop-types';
 import NumberContainer from './NumberContainer';
 import TabcorpHelper from './TabcorpHelper';
 
@@ -10,20 +11,14 @@ import TabcorpHelper from './TabcorpHelper';
  * @param {Array} secondaryNumbers All secondary numbers to display at the end of the results
  * @return {String} <NumberContainer />
  */
-const NumbersList = ({
-  primaryNumbers,
-  secondaryNumbers,
-  secondaryCharacterLabel,
-}) => {
+const NumbersList = ({ primaryNumbers, secondaryNumbers, secondaryCharacterLabel }) => {
   const [secondaryCharacters, setSecondaryCharacters] = useState([]);
 
   /**
    */
   useEffect(() => {
     setSecondaryCharacters(
-      primaryNumbers.slice(
-        Math.max(primaryNumbers.length - secondaryCharacters.length, 1)
-      )
+      primaryNumbers.slice(Math.max(primaryNumbers.length - secondaryCharacters.length, 1))
     );
   }, [primaryNumbers, secondaryCharacters.length]);
 
@@ -32,7 +27,7 @@ const NumbersList = ({
    * @return {String} <NumberContainer />
    */
   const NumberCircles = () => {
-    if (primaryNumbers.length === 0) return;
+    if (primaryNumbers.length === 0) return '';
     const allNumbers = [...primaryNumbers, ...secondaryNumbers];
 
     let secondaryCharacter = false;
@@ -50,17 +45,14 @@ const NumbersList = ({
         if (secondaryNumbersPositions.includes(index + 1)) {
           secondaryCharacter = true;
         }
-      } else {
-        if (secondaryNumbers.includes(number)) {
-          secondaryCharacter = true;
-        }
+      } else if (secondaryNumbers.includes(number)) {
+        secondaryCharacter = true;
       }
 
       return (
         <NumberContainer
-          key={index}
           type="circle"
-          number={number}
+          number={index}
           secondaryCharacter={secondaryCharacter}
           secondaryCharacterLabel={secondaryCharacterLabel}
         />
@@ -69,6 +61,18 @@ const NumbersList = ({
   };
 
   return <div className="numbers">{NumberCircles(primaryNumbers)}</div>;
+};
+
+/**
+ */
+NumbersList.propTypes = {
+  primaryNumbers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])).isRequired,
+  secondaryNumbers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])).isRequired,
+  secondaryCharacterLabel: PropTypes.string,
+};
+
+NumbersList.defaultProps = {
+  secondaryCharacterLabel: '',
 };
 
 export default NumbersList;

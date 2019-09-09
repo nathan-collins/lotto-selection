@@ -12,33 +12,20 @@ describe('<NumbersList />', () => {
 
   beforeEach(() => {
     primaryNumbers = [12, 16, 21, 40];
-    secondaryNumbers = [12];
+    secondaryNumbers = [13];
   });
 
   it('renders the component on shallow', () => {
-    shallow(
-      <NumbersList
-        primaryNumbers={primaryNumbers}
-        secondaryNumbers={secondaryNumbers}
-      />
-    );
+    shallow(<NumbersList primaryNumbers={primaryNumbers} secondaryNumbers={secondaryNumbers} />);
   });
 
   it('renders the component on mount', () => {
-    mount(
-      <NumbersList
-        primaryNumbers={primaryNumbers}
-        secondaryNumbers={secondaryNumbers}
-      />
-    );
+    mount(<NumbersList primaryNumbers={primaryNumbers} secondaryNumbers={secondaryNumbers} />);
   });
 
   it('has the correct number of primary numbers', () => {
     const wrapper = shallow(
-      <NumbersList
-        primaryNumbers={primaryNumbers}
-        secondaryNumbers={secondaryNumbers}
-      />
+      <NumbersList primaryNumbers={primaryNumbers} secondaryNumbers={secondaryNumbers} />
     );
 
     expect(wrapper.find('NumberContainer')).toHaveLength(5);

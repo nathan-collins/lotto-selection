@@ -1,6 +1,7 @@
 import React from 'react';
 import './NumbersSelection.css';
 
+import PropTypes from 'prop-types';
 import NumberContainer from './NumberContainer';
 import TabcorpHelper from './TabcorpHelper';
 
@@ -15,28 +16,18 @@ const NumbersSelection = ({ name, totalNumbers, title, numbers }) => {
   /**
    * @param {Number} totalNumbers Total amount of numbers to display in the box
    */
-  const NumberSquares = (totalNumbers) => {
-    if (!totalNumbers) return;
-    return TabcorpHelper.buildArrayFromNumber(totalNumbers).map(
-      (number, index) => {
-        const exists = numbers.includes(index + 1);
-        return (
-          <NumberContainer
-            key={index}
-            type="square"
-            number={index + 1}
-            exists={exists}
-          />
-        );
-      }
-    );
+  const NumberSquares = () => {
+    if (!totalNumbers) return '';
+    return TabcorpHelper.buildArrayFromNumber(totalNumbers).map((number, index) => {
+      const exists = numbers.includes(index + 1);
+      return <NumberContainer key={index} type="square" number={index + 1} exists={exists} />;
+    });
   };
 
   /**
-   * @param {String} title Title to display
    * @return {String} Show nothing or display the full html
    */
-  const showTitle = (title) => {
+  const showTitle = () => {
     if (!title) return '';
     return <div className="title">{title}</div>;
   };
@@ -49,6 +40,22 @@ const NumbersSelection = ({ name, totalNumbers, title, numbers }) => {
       </div>
     </div>
   );
+};
+
+/**
+ */
+NumbersSelection.propTypes = {
+  name: PropTypes.string,
+  totalNumbers: PropTypes.number,
+  title: PropTypes.string,
+  numbers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])),
+};
+
+NumbersSelection.defaultProps = {
+  name: '',
+  totalNumbers: 35,
+  title: '',
+  numbers: [],
 };
 
 export default NumbersSelection;

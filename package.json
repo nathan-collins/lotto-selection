@@ -1,5 +1,5 @@
 {
-  "name": "jumbo-code-project",
+  "name": "tabcorp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,6 @@
     "react-test-renderer": "^16.9.0",
     "test-utils": "^1.1.1"
   },
-  "proxy": "https://api.themoviedb.org/3/",
   "prettier": {
     "printWidth": 80,
     "singleQuote": true,

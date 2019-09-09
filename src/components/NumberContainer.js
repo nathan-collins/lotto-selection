@@ -1,5 +1,6 @@
 import React from 'react';
 import './NumberContainer.css';
+import PropTypes from 'prop-types';
 
 /**
  *
@@ -9,13 +10,7 @@ import './NumberContainer.css';
  * @param {Boolean} exists Does the number exist in the results list?
  * @param {String} secondaryCharacterLabel Secondary character default display
  */
-const NumberContainer = ({
-  type,
-  number,
-  secondaryCharacter,
-  exists,
-  secondaryCharacterLabel,
-}) => {
+const NumberContainer = ({ type, number, secondaryCharacter, exists, secondaryCharacterLabel }) => {
   return (
     <div
       className={
@@ -28,6 +23,23 @@ const NumberContainer = ({
       {!number && secondaryCharacter ? secondaryCharacterLabel : number}
     </div>
   );
+};
+
+/**
+ */
+NumberContainer.propTypes = {
+  type: PropTypes.string.isRequired,
+  number: PropTypes.number,
+  secondaryCharacter: PropTypes.bool,
+  exists: PropTypes.bool,
+  secondaryCharacterLabel: PropTypes.string,
+};
+
+NumberContainer.defaultProps = {
+  number: 0,
+  secondaryCharacter: false,
+  exists: false,
+  secondaryCharacterLabel: '',
 };
 
 export default NumberContainer;
