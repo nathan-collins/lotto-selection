@@ -9,24 +9,33 @@
 }
 
 .offline-icon {
-  fill: #6c4498 !important;
+  background: #6c4498;
+  border-radius: 50px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 .delete-icon {
-  fill: #767676 !important;
+  background: #767676;
+  border-radius: 50px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 .scale-icon {
-  padding: 3px;
-  transform: scale(1.5);
+  margin: 0 3px;
 }
 
 #increment {
-  padding: 18px 30px;
+  padding: 18px 40px;
 }
 
 #icons {
-  padding: 12px 30px;
+  padding: 12px 60px;
 }
 
 @keyframes App-logo-spin {

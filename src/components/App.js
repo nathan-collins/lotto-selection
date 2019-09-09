@@ -3,6 +3,8 @@ import './App.css';
 
 import Delete from '@material-ui/icons/DeleteOutlineRounded';
 import OfflineBolt from '@material-ui/icons/OfflineBoltRounded';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faBolt } from '@fortawesome/free-solid-svg-icons';
 import NumbersSelection from './NumbersSelection';
 import NumbersList from './NumbersList';
 
@@ -86,8 +88,12 @@ function App() {
         />
       </section>
       <section id="icons">
-        <OfflineBolt className="scale-icon offline-icon" onClick={fetchResults} />
-        <Delete className="scale-icon delete-icon" onClick={removeResults} />
+        <FontAwesomeIcon icon={faBolt} className="scale-icon offline-icon" onClick={fetchResults} />
+        <FontAwesomeIcon
+          icon={faTrashAlt}
+          className="scale-icon delete-icon"
+          onClick={removeResults}
+        />
       </section>
     </div>
   );
